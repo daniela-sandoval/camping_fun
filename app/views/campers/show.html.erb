@@ -1,0 +1,26 @@
+<h1><%= @camper.name%>  </h1>
+
+<h4>Info</h4>
+<ul>
+  <li>Name:
+    <%= @camper.name %>
+  </li>
+  <li>Age:
+    <%= @camper.age %>
+  </li>
+</ul>
+
+<h4>Activities</h4>
+<ul>
+  <% @active.each do |act| %>
+  <li>
+    <%= act.name %>
+  </li>
+  <% end  %>
+</ul>
+
+<br>
+
+<%= button_to "Edit #{@camper.name}?", edit_camper_path(@camper), method: :get %>
+<br>
+<%= button_to "Delete #{@camper.name}?", camper_path(@camper), method: :delete %>
